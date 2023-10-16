@@ -24,7 +24,7 @@ export class LaunchesCommandHandler implements ILaunchesCommandHandler{
         try {
             const launch = await this.repository.getOne(id);
             if (!launch) {
-                throw new Error(`Could not find launch`);
+                throw new Error(`Launch ${id} not found`);
             }
             launch.upcoming = false;
             launch.success = false;

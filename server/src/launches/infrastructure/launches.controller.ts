@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express"
 import { LaunchesCommandHandler } from "../application/launches.command"
-import { LaunchesQueryHandler } from "../application/launches.query"
+import { ILaunchesQueryHandler } from "../application/launches.query"
 import { Launch } from "../domain/launch"
 import { HTTP_STATUS_CODE } from "../../common/constants"
 
@@ -17,10 +17,10 @@ export class LaunchResponse {
 }
 
 export class LaunchesController {
-    query: LaunchesQueryHandler
+    query: ILaunchesQueryHandler
     command: LaunchesCommandHandler
 
-    constructor(query: LaunchesQueryHandler, command: LaunchesCommandHandler) {
+    constructor(query: ILaunchesQueryHandler, command: LaunchesCommandHandler) {
         this.query = query
         this.command = command
     }
